@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback Pelanggan</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #e9eff1; /* Warna latar belakang yang lebih terang */
+      }
+      .feedback-container {
+        background-color: #ffffff; /* Warna putih untuk kontainer */
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        padding: 40px;
+        max-width: 450px;
+        margin: 100px auto;
+      }
+      h2 {
+        font-weight: bold;
+        color: #1877f2; /* Warna biru Facebook */
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      .form-label {
+        font-size: 18px;
+        font-weight: 500;
+      }
+      .form-select,
+      .form-control {
+        height: 50px;
+        font-size: 16px;
+      }
+      .btn-primary {
+        background-color: #1877f2; /* Warna biru Facebook */
+        border: none;
+        font-size: 18px;
+        padding: 10px 20px;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .btn-primary:hover {
+        background-color: #165eab; /* Warna gelap saat hover */
+      }
+      .note {
+        margin-top: 20px;
+        font-size: 16px;
+        text-align: center;
+        color: #6c757d;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="feedback-container">
+      <h2>Feedback Pelanggan</h2>
+      <form id="feedbackForm">
+        <div class="mb-4">
+          <label for="topik" class="form-label">Topik Feedback</label>
+          <select class="form-select" id="topik">
+            <option value="Pelayanan">Pelayanan</option>
+            <option value="Menu">Menu</option>
+            <option value="Lainnya">Lainnya</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="form-label">Pelayanan</label>
+          <div>
+            <input type="radio" id="baik" name="pelayanan" value="Baik" />
+            <label for="baik" class="me-3">Baik</label>
+            <input type="radio" id="cukup" name="pelayanan" value="Cukup" />
+            <label for="cukup" class="me-3">Cukup</label>
+            <input type="radio" id="buruk" name="pelayanan" value="Buruk" />
+            <label for="buruk">Buruk</label>
+          </div>
+        </div>
+        <div class="mb-4">
+          <label for="pesan" class="form-label">Pesan Anda</label>
+          <textarea
+            class="form-control"
+            id="pesan"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Kirim</button>
+      </form>
+      <div class="note">
+        Terima kasih sudah kasih saran, ditunggu kembali untuk makan di sini!
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("feedbackForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Mencegah pengiriman default
+          alert("Feedback Anda telah dikirim!");
+          // Ganti URL di bawah dengan halaman yang ingin dituju
+          window.location.href = "index.html"; // Contoh: kembali ke halaman utama
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+  </body>
+</html>

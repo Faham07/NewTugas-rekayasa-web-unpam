@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survei Minat Menu Makanan</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #e9ecef;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .card {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .card-header {
+        background-color: #3b5998;
+        color: white;
+        border-radius: 10px 10px 0 0;
+        text-align: center;
+        padding: 20px;
+      }
+      .btn-primary {
+        background-color: #3b5998;
+        border: none;
+      }
+      .btn-primary:hover {
+        background-color: #365e8d;
+      }
+    </style>
+    <script>
+      function submitSurvey(event) {
+        event.preventDefault();
+        const modal = new bootstrap.Modal(
+          document.getElementById("thankYouModal")
+        );
+        modal.show();
+      }
+
+      function redirectToHome() {
+        window.location.href = "index.html"; // Ganti dengan nama file index yang sesuai
+      }
+    </script>
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-header">
+        <h2>Survei Minat Menu Makanan</h2>
+      </div>
+      <div class="card-body">
+        <form onsubmit="submitSurvey(event)">
+          <div class="mb-3">
+            <h5>Menu apa saja yang Anda suka?</h5>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Ayam Penyet"
+                id="Ayam Penyet"
+              />
+              <label class="form-check-label" for="Ayam Penyet"
+                >Ayam Penyet</label
+              >
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Nasi Goreng"
+                id="Nasi Goreng"
+              />
+              <label class="form-check-label" for="Nasi Goreng"
+                >Nasi Goreng</label
+              >
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Sate Ayam"
+                id="Sate Ayam"
+              />
+              <label class="form-check-label" for="Sate Ayam">Sate Ayam</label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Bakso"
+                id="Bakso"
+              />
+              <label class="form-check-label" for="Bakso">Bakso</label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Pizza"
+                id="Pizza"
+              />
+              <label class="form-check-label" for="Pizza">Pizza</label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Mie Goreng"
+                id="Mie Goreng"
+              />
+              <label class="form-check-label" for="Mie Goreng"
+                >Mie Goreng</label
+              >
+            </div>
+          </div>
+          <div class="mb-3">
+            <h5>Berapa menu yang Anda habiskan dalam seminggu?</h5>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="makanan"
+                id="1-3"
+                value="1-3"
+              />
+              <label class="form-check-label" for="1-3">1-3</label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="makanan"
+                id="4-6"
+                value="4-6"
+              />
+              <label class="form-check-label" for="4-6">4-6</label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="makanan"
+                id="7plus"
+                value="7+"
+              />
+              <label class="form-check-label" for="7plus">7+</label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Kirim</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="thankYouModal"
+      tabindex="-1"
+      aria-labelledby="thankYouModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="thankYouModalLabel">Terima Kasih!</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Terima kasih telah mengisi survei! Klik tombol di bawah ini untuk
+              kembali ke halaman utama.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Tutup
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="redirectToHome()"
+            >
+              Kembali ke Home
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+  </body>
+</html>

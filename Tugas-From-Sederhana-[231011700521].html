@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Sederhana</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .card {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .card-header {
+        background-color: #3b5998; /* Warna Facebook */
+        color: white;
+        border-radius: 10px 10px 0 0;
+        text-align: center;
+        padding: 20px;
+      }
+      .btn-primary {
+        background-color: #3b5998; /* Warna Facebook */
+        border: none;
+      }
+      .btn-primary:hover {
+        background-color: #2d4373; /* Warna gelap saat hover */
+      }
+    </style>
+    <script>
+      function submitForm(event) {
+        event.preventDefault(); // Mencegah form dari pengiriman default
+        // Menampilkan alert sebagai notifikasi
+        alert(
+          "Terima kasih telah mendaftar! Anda akan kembali ke halaman utama."
+        );
+        // Mengarahkan pengguna ke halaman utama (ganti dengan nama file index Anda)
+        window.location.href = "index.html"; // Ubah ke nama file index yang sesuai
+      }
+    </script>
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-header">
+        <h2>Daftar pelanggan</h2>
+      </div>
+      <div class="card-body">
+        <form onsubmit="submitForm(event)">
+          <div class="mb-3">
+            <label for="nama" class="form-label">Nama:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nama"
+              placeholder="Masukkan nama"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Masukkan email"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Daftar</button>
+        </form>
+        <p class="mt-3">
+          Note: Setelah mengisi form, Anda akan otomatis kembali ke halaman
+          utama.
+        </p>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
